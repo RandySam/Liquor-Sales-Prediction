@@ -7,7 +7,8 @@ Industri minuman keras (liquor) merupakan salah satu sektor dengan tingkat distr
 **Referensi:**
 
 1. Castaldelli-Maia, J. M., Segura, L. E., & Martins, S. S. (2021). *The concerning increasing trend of alcohol beverage sales in the U.S. during the COVID-19 pandemic*. Alcohol, 96, 37–42. https://doi.org/10.1016/j.alcohol.2021.06.004.
-2. Paul, U. (2023). *COVID-19 Liquor Sales Forecasting Model*. In Lecture notes in computer science (pp. 499–505). https://doi.org/10.1007/978-3-031-47994-6_44
+2. Paul, U. (2023). *COVID-19 Liquor Sales Forecasting Model*. In Lecture notes in computer science (pp. 499–505). https://doi.org/10.1007/978-3-031-47994-6_44.
+3. Sumber Dataset diambil dari [Kaggle](https://www.kaggle.com/datasets/fatemehmohammadinia/retail-sales-data-set-of-alcohol-and-liquor/data).
 
 ## Business Understanding
 
