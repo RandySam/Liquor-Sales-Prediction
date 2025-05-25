@@ -79,6 +79,34 @@ Metrik yang digunakan dalam eksperimen ini **Mean Absolute Error (MAE)**, **Mean
 
 1. **Mean Absolute Error (MAE)**
 
+![MAE](/assets/mae.jpeg)
+
+Mengukur rata-rata kesalahan absolut prediksi serta memberikan gambaran seberapa jauh prediksi dari nilai sebenarnya.
+
+2. **Mean Squared Error (MSE)**
+
+![MSE](/assets/mse.jpeg)
+
+MSE adalah nilai rata-rata dari kuadrat kesalahan antara nilai sebenarnya dan nilai prediksi.
+
+3. **R2 Score**
+
+![R2 Score](/assets/r2_score.jpeg)
+
+R<sup>2</sup> Score mengukur proporsi variasi dalam target yang dapat dijelaskan oleh model.
+
+5. **Root Mean Squared Error (RMSE)**
+
+![RMSE](/assets/rmse.png)
+
+RMSE adalah akar kuadrat dari MSE. Ini mengembalikan kesalahan ke dalam satuan yang sama dengan data sehingga lebih mudah diinterpretasikan.
+
+6. **Mean CV R2 Score**
+
+![Mean CV R2 Score](/assets/mean_cv_r2_score.png)
+
+Mean CV R<sup>2</sup> Score adalah nilai rata-rata performa dari semua fold CV, metrik ini dapat mengestimasi performa yang lebih robust sehingga dapat dijadikan dasar pemilihan model yang objektif.
+
 
 ### **Hasil dan Perbandingan**
 
@@ -89,4 +117,4 @@ Metrik yang digunakan dalam eksperimen ini **Mean Absolute Error (MAE)**, **Mean
 | Gradient Boosting Regressor | 0.033437| 0.005694  | 0.916209 | 0.075459| 0.917402         |
 
 
-Model  berhasil memberikan nilai RMSE yang lebih rendah dibandingkan model baseline Linear Regression, menunjukkan peningkatan performa prediktif secara signifikan.
+Gradient Boosting Regressor memiliki R<sup>2</sup> Score sebesar **0.9162** yang berarti model dapat menjelaskan lebih dari **91%** variasi dalam data. Gradient Boosting Regressor juga memiliki MAE terendah sebesar **0.0334**, hal tersebut menunjukkan prediksi rata-rata hanya meleset sekitar **3.3%** dari nilai sebenarnya. Selain itu, skor MSE dan RMSE dari Gradient Boosting Regressor paling rendah di antara semua model dengan skor masing-masing **0.00569** dan **0.0755**, menunjukan paling sedikit menghasilkan error besar dan sebaran error yang sangat terkontrol. Terakhir, rata-rata CV R<sup>2</sup> Score memiliki performa sebesar **91.74%** yang menunjukan model tidak overfitting..
