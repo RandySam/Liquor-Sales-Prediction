@@ -55,24 +55,60 @@ Dataset berisi 307.645 baris data transaksi penjualan dari berbagai distributor 
 ## Data Preparation
 
 1. Mengatasi missing values dengan mengisi kolom dengan modus untuk variabel kategorik dan menggunakan metode drop untuk menghapus missing values untuk variabel numerik.
-2. Menggunakan metode scaling (MinMaxScaler) pada fitur numerik.
-3. Menghindari outlier ekstrem melalui winsorization.
+2. Menghindari outlier ekstrem melalui winsorization.
+3. Menggunakan metode scaling (MinMaxScaler) pada fitur numerik.
 
 ## Modeling
 
 Pada proyek ini, saya menggunakan tiga algoritma regresi dengan variabel `RETAIL SALES` sebagai label. Berikut ini adalah algoritma yang digunakan:
 
-**1. Linear Regression**
-    - Mudah dipahami dan diinterpretasikan sehingga cocok sebagai baseline untuk mengetahui apakah hubungan antar fitur bersifat linier.
-    - Sangat efisien untuk dataset besar dengani >300 ribu baris.
-    
-**2. Random Forest Regressor**
-    - Mampu menangani data non-linear sehingga ideal untuk menangkap pola kompleks antar fitur.
-    - Tahan terhadap outlier: Model tetap stabil meskipun ada nilai ekstrim atau noise.
-    
+Dalam proyek ini, saya menggunakan tiga algoritma regresi:
+
+`Random Forest Regressor`
+
+`Linear Regression`
+
+`Gradient Boosting Regressor`
+
+Penjelasan Cara Kerja Setiap Algoritma:
+
+**1. Random Forest Regressor**
+
+Random Forest merupakan model ensemble yang membangun banyak decision tree secara paralel (bagging), lalu menggabungkan prediksinya (rata-rata untuk regresi).
+Setiap tree dilatih pada subset acak dari data (bootstrap) dan subset acak dari fitur, yang meningkatkan generalisasi model.
+
+Keunggulannya adalah kemampuannya menangani data besar, noise, dan outlier dengan baik. Random Forest juga menyediakan feature importance untuk interpretasi.
+
+**Parameter yang digunakan:**
+
+- `n_estimators=100:` Jumlah pohon
+
+- `max_depth=None:` Tidak dibatasi, pohon akan tumbuh sampai selesai
+
+- `random_state=42:` Agar hasil konsisten
+
+**2. Linear Regression**
+
+Linear Regression bekerja dengan mencari garis lurus terbaik yang memodelkan hubungan antara fitur-fitur input dan target.
+Model ini mencari koefisien. Koefisien ditentukan dengan meminimalkan Mean Squared Error (MSE) antara nilai prediksi dan nilai aktual.
+Model ini cocok untuk baseline karena mudah diinterpretasikan, namun kurang mampu menangkap hubungan non-linear.
+
+- Parameter yang digunakan: Default dari LinearRegression()
+
+- Random state: Tidak digunakan karena model ini deterministik.
+
+
 **3. Gradient Boosting Regressor**
-    - Akurasi tinggi dengan membangun model secara bertahap dengan memperbaiki kesalahan dari model sebelumnya.
-    - Mengurangi bias dan varians, kombinasi boosting membuat model lebih presisi dibanding model tunggal.
+
+Berbeda dari Random Forest, Gradient Boosting membangun pohon secara berurutan, di mana setiap pohon berikutnya mencoba memperbaiki error dari pohon sebelumnya.
+Model ini melakukan gradient descent terhadap fungsi loss (biasanya MSE), menjadikannya akurat namun lebih sensitif terhadap overfitting.
+
+**Parameter yang digunakan:**
+
+- `n_estimators=100:` Jumlah iterasi boosting
+
+- `random_state=184:` Untuk reproduksibilitas
+
 
 ## Evaluation
 
